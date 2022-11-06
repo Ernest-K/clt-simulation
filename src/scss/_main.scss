@@ -3,9 +3,12 @@ main {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 8rem 0;
 
   .chart-container {
+    flex-grow: 1;
     border: 1px solid black;
+    margin-right: 2rem;
   }
 
   .form-container {

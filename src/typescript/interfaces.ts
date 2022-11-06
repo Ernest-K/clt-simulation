@@ -11,3 +11,9 @@ export interface InputValue {
   numOfSamples: number;
   sizeOfSample: number;
 }
+
+export interface SampleProperties {
+  population: number[];
+  numOfSamples: number;
+  sizeOfSample: number;
+}
