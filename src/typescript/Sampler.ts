@@ -1,30 +1,48 @@
-import d3 from "d3";
+import * as d3 from "d3";
 import { SampleProperties } from "./interfaces";
 
 export default class Sampler {
-  N = 10000;
-  private samples: number[][];
-  private meanSamples: (number | undefined)[];
+  private _samples: number[][];
+  private _meanSamples: number[];
 
-  constructor(private sampleProperties: SampleProperties) {}
+  constructor(private _sampleProperties: SampleProperties) {
+    this._getSamplesFromPopulation();
+    this._getMeanFromSamples();
+  }
 
-  private getSamplesFromPopulation() {
-    this.samples = [...Array(this.sampleProperties.numOfSamples)].map(() => {
-      return [...Array(this.sampleProperties.sizeOfSample)].map(() => {
-        return this.sampleProperties.population[d3.randomInt(this.N)()];
+  private _getSamplesFromPopulation(): void {
+    this._samples = [...Array(this._sampleProperties.numOfSamples)].map(() => {
+      return [...Array(this._sampleProperties.sizeOfSample)].map(() => {
+        return this._sampleProperties.population[
+          this._randomInt(this._sampleProperties.population.length)
+        ];
       });
     });
   }
 
-  private getMeanFromSamples() {
-    this.meanSamples = this.samples.map((el) => d3.mean(el));
+  private _getMeanFromSamples(): void {
+    this._meanSamples = this._samples.map((el) => d3.mean(el) || 0);
   }
 
-  public getSamples(): number[][] {
-    return samples;
+  private _randomInt(max: number, min = 0): number {
+    return Math.floor(Math.random() * max) + min;
   }
 
-  public getMeanSamples(): (number | undefined)[] {
-    return meanSamples;
+  private _update(): void {
+    this._getSamplesFromPopulation();
+    this._getMeanFromSamples();
+  }
+
+  public get samples(): number[][] {
+    return this._samples;
+  }
+
+  public get meanSamples(): number[] {
+    return this._meanSamples;
+  }
+
+  public set sampleProperties(sampleProperties: SampleProperties) {
+    this._sampleProperties = sampleProperties;
+    this._update();
   }
 }
