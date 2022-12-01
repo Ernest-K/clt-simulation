@@ -1,6 +1,19 @@
 footer {
+  margin: 0.5rem auto;
   p {
+    cursor: default;
     text-align: center;
     font-size: 0.8rem;
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: black;
+      }
+    }
   }
 }
