@@ -1,5 +1,6 @@
 # Temporary folders and files
 .test/
+.vscode/
 npm-debug.log
 
 # Distribution folders
