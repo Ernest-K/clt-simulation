@@ -1,4 +1,4 @@
-export interface InputSelector {
+export interface InputSelectors {
   distributionInput: HTMLSelectElement;
   numOfSamplesInput: HTMLInputElement;
   numOfSamplesRangeInput: HTMLInputElement;
@@ -16,4 +16,10 @@ export interface SampleProperties {
   population: number[];
   numOfSamples: number;
   sizeOfSample: number;
+}
+
+export interface ChartDimensions {
+  width: number;
+  height: number;
+  margins: number;
 }

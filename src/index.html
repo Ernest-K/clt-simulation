@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="scss/index.scss" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
     <title>Central limit theorem simulation</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1>Central limit theorem simulation</h1>
+        <h1>
+          Central Limit Theorem <br /><span class="sub-text">Simulation</span>
+        </h1>
       </header>
       <main>
         <section class="chart-container"></section>
@@ -23,7 +26,8 @@
                 <option selected value="uniform">Uniform</option>
                 <option value="normal">Normal</option>
                 <option value="logNormal">Log-normal</option>
-                <option value="exponential">Exponential</option>
+                <option value="exponential">Skewed right</option>
+                <option value="skewedLeft">Skewed left</option>
               </select>
             </div>
             <div class="input-container">
@@ -32,7 +36,7 @@
                 type="number"
                 id="num-of-samples"
                 name="num-of-samples"
-                min="0"
+                min="1"
                 max="10000"
               />
             </div>
@@ -41,7 +45,7 @@
               type="range"
               id="range-num-of-samples"
               name="num-of-samples"
-              min="0"
+              min="1"
               max="10000"
               value="5000"
             />
@@ -52,7 +56,7 @@
                 type="number"
                 id="size-of-sample"
                 name="size-of-sample"
-                min="0"
+                min="1"
                 max="20"
               />
             </div>
@@ -61,7 +65,7 @@
               type="range"
               id="range-size-of-sample"
               name="size-of-sample"
-              min="0"
+              min="1"
               max="20"
               value="10"
             />
@@ -69,9 +73,18 @@
         </aside>
       </main>
       <footer>
-        <p>Made by Ernest Kleczewski</p>
+        <p>
+          Made by
+          <a
+            href="https://github.com/Ernest-K"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ernest Kleczewski</a
+          >
+        </p>
       </footer>
     </div>
-    <script src="typescript/index.ts"></script>
+    <script src="typescript/index.ts" defer></script>
   </body>
 </html>

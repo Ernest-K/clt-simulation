@@ -1,4 +1,6 @@
-export const chartDimensions = {
+import { ChartDimensions } from "./interfaces";
+
+export const chartDimensions: ChartDimensions = {
   width: (document.querySelector(".chart-container") as HTMLElement)
     .offsetWidth,
   height:
