@@ -1,16 +1,4 @@
-import { chartDimensions } from "./chartDimensions";
-import { DistribiutionType } from "./DistribiutionType";
-import FormControler from "./FormControler";
-import PopulationGenerator from "./PopulationGenerator";
+import ChartController from "./ChartController";
 
-const formControler = new FormControler(
-  document.querySelector("form") as HTMLFormElement
-);
-
-const populationGenerator = new PopulationGenerator(
-  DistribiutionType[`${formControler.getInput().distribution}`]
-);
-
-console.log(chartDimensions);
-
-console.log(populationGenerator.getPopulation());
+const chartController = new ChartController();
+chartController.init();
