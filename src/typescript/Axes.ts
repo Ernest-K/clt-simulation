@@ -46,8 +46,6 @@ export default class Axes {
     this._xAxis = d3
       .axisBottom(this._xScale)
       .tickValues(this._getTicksValues());
-
-    console.log(this._getTicksValues());
   }
 
   public get yScale() {

@@ -28,7 +28,7 @@ export default class Chart {
     const bin = d3
       .bin()
       .domain([0, this.MAX])
-      .thresholds(Math.floor(this.MAX / 2));
+      .thresholds(Math.floor(this.MAX / (window.innerWidth < 992 ? 2 : 1)));
 
     this._buckets = bin(this._meanSamples);
   }

@@ -19,6 +19,9 @@ header {
   @include md {
     h1 {
       font-size: 1.8rem;
+      .sub-text {
+        font-size: 1.6rem;
+      }
     }
   }
 }
