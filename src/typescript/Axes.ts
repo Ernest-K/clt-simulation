@@ -43,7 +43,11 @@ export default class Axes {
   }
 
   private _createXAxis(): void {
-    this._xAxis = d3.axisBottom(this._xScale).ticks(Math.floor(this.MAX / 2));
+    this._xAxis = d3
+      .axisBottom(this._xScale)
+      .tickValues(this._getTicksValues());
+
+    console.log(this._getTicksValues());
   }
 
   public get yScale() {
@@ -70,10 +74,22 @@ export default class Axes {
     this._chartDimensions = chartDimensions;
   }
 
-  public update() {
+  public update(): void {
     this._createYScale();
     this._createXScale();
     this._createYAxis();
     this._createXAxis();
+  }
+
+  private _getTicksValues(): number[] {
+    const tickValues: number[] = [];
+    for (
+      let index = 0;
+      index <= this.MAX;
+      index += window.innerWidth < 992 ? 4 : 2
+    ) {
+      tickValues.push(index);
+    }
+    return tickValues;
   }
 }
