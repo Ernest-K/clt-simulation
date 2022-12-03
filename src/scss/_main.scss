@@ -43,7 +43,7 @@ main {
       align-items: center;
 
       .input-container:not(:first-of-type) {
-        margin-top: 4rem;
+        margin-top: 2.5rem;
       }
 
       .input-container {
@@ -84,7 +84,7 @@ main {
       }
 
       input[type="range"] {
-        margin-top: 0.8rem;
+        margin-top: 0.6rem;
         width: 90%;
       }
     }
