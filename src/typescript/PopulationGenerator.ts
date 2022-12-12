@@ -1,13 +1,13 @@
 export default class PopulationGenerator {
   private N = 10000;
 
-  constructor(private _distribiutionType: () => number) {}
+  constructor(private _distributionType: () => number) {}
 
   public get population(): number[] {
-    return [...Array(this.N)].map(() => this._distribiutionType());
+    return [...Array(this.N)].map(() => this._distributionType());
   }
 
-  public set distribiutionType(distribiutionType: () => number) {
-    this._distribiutionType = distribiutionType;
+  public set distributionType(distributionType: () => number) {
+    this._distributionType = distributionType;
   }
 }

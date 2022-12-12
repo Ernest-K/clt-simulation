@@ -18,10 +18,10 @@ main {
       }
       .bar-group {
         g rect {
-          fill: #1859e6;
+          fill: $primary-blue;
           transition: fill 0.1s ease-out;
           &:hover {
-            fill: #154eca;
+            fill: $darker-blue;
           }
         }
       }
@@ -68,7 +68,7 @@ main {
           &:focus {
             outline: none;
             border-width: 2px;
-            border-color: #00277c;
+            border-color: $darker-blue;
           }
         }
 

@@ -2,7 +2,7 @@ import Chart from "./Chart";
 import FormController from "./FormController";
 import PopulationGenerator from "./PopulationGenerator";
 import Sampler from "./Sampler";
-import { distribiutionType } from "./distribiutionType";
+import { distributionType } from "./distributionType";
 import { SampleProperties } from "./interfaces";
 
 export default class ChartController {
@@ -19,7 +19,7 @@ export default class ChartController {
     this._formController.bindOnChangeValue(this._onChangeValue);
 
     this._populationGenerator = new PopulationGenerator(
-      distribiutionType[`${this._formController.inputValue.distribution}`]
+      distributionType[`${this._formController.inputValue.distribution}`]
     );
 
     this._sampler = new Sampler(this._getSampleProperties());
@@ -41,8 +41,8 @@ export default class ChartController {
   }
 
   private _onChangeValue = () => {
-    this._populationGenerator.distribiutionType =
-      distribiutionType[`${this._formController.inputValue.distribution}`];
+    this._populationGenerator.distributionType =
+      distributionType[`${this._formController.inputValue.distribution}`];
     this._sampler.sampleProperties = this._getSampleProperties();
     this._chart.setMeanSamples(this._sampler.meanSamples);
     this._chart.update();

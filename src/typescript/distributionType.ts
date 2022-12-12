@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 
-export const distribiutionType = {
+export const distributionType = {
   uniform: d3.randomUniform(64),
   normal: d3.randomNormal(32, 8),
   logNormal: d3.randomLogNormal(2, 1.25),
